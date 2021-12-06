@@ -1,7 +1,7 @@
 // Queue with two stacks. Implement a queue with two stacks so that each queue operations takes a
 // constant amortized number of stack operations. Hint: If you push elements onto a stack and then 
 // pop them all, they appear in reverse order. If you repeat this process, they're now back in order.
-//import java.io.*;
+import java.io.*;
 import java.util.*;
 
 class Queue {
@@ -27,7 +27,10 @@ class Queue {
     
     // Get the front element.
     public int peek() {
-        return 0;
+        while(stack1.size()!=0) {stack2.push(stack1.pop());}
+        int value = stack2.peek();
+        while(stack2.size()!=0) {stack1.push(stack2.pop());}
+        return value;
     }
     
     // Return whether the queue is empty.
