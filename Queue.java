@@ -35,6 +35,11 @@ class Queue {
     
     // Return whether the queue is empty.
     public boolean empty() {
+        if(stack1.empty()) {
+            if(stack2.empty()){
+                return true;
+            }
+        }
         return false;
     }
 
