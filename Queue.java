@@ -45,6 +45,11 @@ class Queue {
 
     // Return the number of elements in queue.
     public boolean size() {
+        if(stack1.size()!=0){
+            if(stack2.size()!=0){
+                return true;
+            }
+        }
         return false;
     }
     
